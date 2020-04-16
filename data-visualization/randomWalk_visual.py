@@ -13,7 +13,12 @@ while True: # <------- Comment this line and others that it have arrows if you'l
     plt.style.use('seaborn')
     fig = plt.subplot() 
     ax = plt.subplot()  
-    ax.scatter(rw.x_values, rw.y_values, s=10)
+    point_numbers = range(rw.num_points)
+    ax.scatter(rw.x_values, rw.y_values, 
+        c=point_numbers, 
+        cmap=plt.cm.Reds,
+        edgecolors='none', 
+        s=10)
 
     # Set chart tittle and label axes.
     ax.set_title("Random Walks", fontsize=20)
