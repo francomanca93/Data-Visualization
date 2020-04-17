@@ -5,10 +5,10 @@ from die import Die
 
 # Create a die with 6 sides = D6
 die_1 = Die()  # instace of Die class
-die_2 = Die()
+die_2 = Die(10)
 # Make some rolls, and store results in a list.
 results = []  # A list of results
-for roll_num in range(1000):
+for roll_num in range(50_000):
     result = die_1.roll() + die_2.roll()
     results.append(result)
 
@@ -28,11 +28,11 @@ data = [Bar(x=x_values, y=frequencies)]
 # Configurating layout. Especifically the title and the axises. 
 x_axis_config = {'title': 'Result', 'dtick': 1}  # Dictionary of x axis
 y_axis_config = {'title': 'Frecuency of Result'}  # Dictionary of y axis
-my_layout = Layout(title='Results of rolling two D6 dice 1000 times',
+my_layout = Layout(title='Results of rolling a D6 and a D10 50 000 times',
     xaxis=x_axis_config,
     yaxis=y_axis_config)
 
 # Plotting data of de roll dice in a bar chart
 offline.plot({'data': data, 'layout': my_layout})
-# offline.plot({'data': data, 'layout': my_layout}, filename='d6_d6.html') # <---- To save the bar chart
+# offline.plot({'data': data, 'layout': my_layout}, filename='d6_d10.html') # <---- To save the bar chart
 
