@@ -1,5 +1,5 @@
 # Data-Visualization
-Data visualization: Exploring data through visual representations. First step to be a data scientist.
+Data visualization: Exploring data through visual representations. First step to be a data scientist. [Read more how to start in Data Science](https://github.com/francomanca93/Data-Visualization/blob/master/DataScientist-spanish.md).
 
 ### data-visualization folder
 In this folder I learned to generate data sets and create visualization of that data.
