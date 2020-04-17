@@ -13,6 +13,8 @@ while True: # <------- Comment this line and others that it have arrows if you'l
     plt.style.use('seaborn')
     fig = plt.subplot() 
     ax = plt.subplot()  
+    
+    # Plotting the cloud points
     point_numbers = range(rw.num_points)
     ax.scatter(rw.x_values, rw.y_values, 
         c=point_numbers, 
