@@ -1,4 +1,9 @@
+# Folders
 env/
 .vscode/
 __pycache__/
+
+# Files. Bytecode Python file and others
+*.pyc
+
 
