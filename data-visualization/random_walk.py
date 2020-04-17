@@ -46,7 +46,7 @@ class RandomWalk:
         coordinate_direction = choice([1, -1])  # 1 = Right direction, -1 = Left direction
         coordinate_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8]) # distance traveled 
         coordinate_step = coordinate_direction * coordinate_distance # Go...
-
+        return coordinate_step
 
 
 
