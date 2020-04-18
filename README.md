@@ -8,7 +8,7 @@ There are three folder more that I will explain it.
 
 1. The folder **plot_a_line_graph**:
     - I created simple plots with Matplotlib.
-    - Contain three files. One jupyter notebook files and two python scripts.
+    - Contain two python scripts.
     
 2. The folder **random_walks**:
     - I used a scatter plot to explore random walks.
