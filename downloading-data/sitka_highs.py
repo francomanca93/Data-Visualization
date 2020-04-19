@@ -3,7 +3,7 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 
-filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/data/sitka_weather_07-2018_simple.csv'
+filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/data/sitka_weather_2018_simple.csv'
 # filename = 'data/sitka_weather_07-2018_simple.csv'  # String object
 
 with open(filename) as f:  # Open the file and assign the resulting file object to 'f'
@@ -26,7 +26,7 @@ ax = plt.subplot()
 ax.plot(dates, highs, c='red')  # I pass the dates and the high temperature values to plot()
 
 # Format plot
-plt.title("Daily high temperatures, July 2018", fontsize=20)
+plt.title("Daily high temperatures - 2018", fontsize=24)
 
 plt.xlabel('Dates', fontsize=10)
 plt.xticks(rotation=30)  # Rotate x ticks 30º
