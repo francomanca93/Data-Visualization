@@ -24,8 +24,9 @@ with open(filename) as f:  # Open the file and assign the resulting file object 
 plt.style.use('seaborn')
 fig = plt.subplot()
 ax = plt.subplot()
-ax.plot(dates, highs, c='red')  # I pass the dates and the high temperature values to plot()
-ax.plot(dates, lows, c='blue')
+ax.plot(dates, highs, c='red', alpha=0.5)  # I pass the dates and the high temperature values to plot()
+ax.plot(dates, lows, c='blue', alpha=0.5)  # alpha controls a color's transparency
+plt.fill_between(dates, highs, lows, facecolor='green', alpha=0.2)
 
 # Format plot
 plt.title("Daily high and low temperatures - 2018", fontsize=22)
