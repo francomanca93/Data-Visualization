@@ -5,6 +5,6 @@ filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloadi
 with open(filename) as f:
     all_eq_data = json.load(f)  # store entire set of data
 
-readable_file = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/readable_eq_data.json'
-with open(readable_file, 'w') as f:
-    json.dump(all_eq_data, f, indent=4)  # json.dump function takes JSON data object and a file object and write the data to that file
+all_eq_dicts = all_eq_data['features']
+print(len(all_eq_dicts))
+
