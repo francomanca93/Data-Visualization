@@ -8,11 +8,19 @@ with open(filename) as f:
 # store all dictionaries
 all_eq_dicts = all_eq_data['features']  # I took the data associated with the key 'features' and store
 
-mags = []
+mags, lons, lats = [], [], []
 for eq_dict in all_eq_dicts:
-    mag = eq_dict['properties']['mag']  # I stored the mag data that it is conteined in 'properties' dictionary
+    mag = eq_dict['properties']['mag']  # I stored the magnitudes data that it is conteined in 'properties' dictionary
+    lon = eq_dict['geometry']['coordinates'][0] # I stored the longiteds data that it is conteined in 'geometry'--> 'coordinates'
+    lat = eq_dict['geometry']['coordinates'][1] # I stored the latitudes data that it is conteined in 'geometry' --> 'coordinates'
     mags.append(mag)  # Append the mag data
+    lons.append(lon) # Append the longitudes data
+    lats.append(lat) # Append the latitudes data
 
 print(mags[:10])  # Print the 10 first mag
-print(mags)
+print(lons[:5]) # Print the 5 first longitudes
+print(lats[:5]) # Print the 5 first latitudes
+
+
+
 
