@@ -1,5 +1,8 @@
 import json
 
+from plotly.graph_objs import Scattergeo, Layout  # Scattergeo allow you plot of geographic data on a map. Layout is a class
+from plotly import offline  # offline module allow you to render a map
+
 # Explore the structure of the data.
 filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/eq_data_1_day_m1.json'
 with open(filename) as f:
@@ -8,6 +11,7 @@ with open(filename) as f:
 # store all dictionaries
 all_eq_dicts = all_eq_data['features']  # I took the data associated with the key 'features' and store
 
+# extracting magnitudes, longitudes, latitudes from the json data
 mags, lons, lats = [], [], []
 for eq_dict in all_eq_dicts:
     mag = eq_dict['properties']['mag']  # I stored the magnitudes data that it is conteined in 'properties' dictionary
@@ -17,10 +21,11 @@ for eq_dict in all_eq_dicts:
     lons.append(lon) # Append the longitudes data
     lats.append(lat) # Append the latitudes data
 
-print(mags[:10])  # Print the 10 first mag
-print(lons[:5]) # Print the 5 first longitudes
-print(lats[:5]) # Print the 5 first latitudes
+# Map the eathquakes.
+data = [Scattergeo(lon=lons, lat=lats)]  # I created the Scattergeo object inside the list data
+my_layout = Layout(title='Global Earthquakes')  # I instance from a Layout class that it is conteined in plotly.graph_objs
 
-
+fig = {'data': data, 'layout': my_layout}  # Dictionary that conteins the data and the layout.
+offline.plot(fig,filename='global_earthquakes.html')  # With offline.plot() function I can plot the data
 
 
