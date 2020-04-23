@@ -5,6 +5,8 @@ from plotly import offline  # offline module allow you to render a map
 
 # Explore the structure of the data.
 filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/eq_data_30_day_m1.json'
+# filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/eq_data_1_day_m1.json'
+
 with open(filename) as f:
     all_eq_data = json.load(f)  # store entire set of data
 
@@ -34,7 +36,9 @@ data = [{  # I created the Scattergeo object inside the list data. Inside the li
         'colorbar': {'title': 'Magnitude'},
         },
 }]
-my_layout = Layout(title='Global Earthquakes')  # I instance from a Layout class that it is conteined in plotly.graph_objs
+
+title = all_eq_data['metadata']['title']
+my_layout = Layout(title=title)  # I instance from a Layout class that it is conteined in plotly.graph_objs
 
 fig = {'data': data, 'layout': my_layout}  # Dictionary that conteins the data and the layout.
 offline.plot(fig,filename='global_earthquakes.html')  # With offline.plot() function I can plot the data
