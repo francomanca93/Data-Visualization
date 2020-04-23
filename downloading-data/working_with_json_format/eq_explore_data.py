@@ -4,7 +4,7 @@ from plotly.graph_objs import Scattergeo, Layout  # Scattergeo allow you plot of
 from plotly import offline  # offline module allow you to render a map
 
 # Explore the structure of the data.
-filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/eq_data_1_day_m1.json'
+filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/eq_data_30_day_m1.json'
 with open(filename) as f:
     all_eq_data = json.load(f)  # store entire set of data
 
@@ -27,7 +27,11 @@ data = [{  # I created the Scattergeo object inside the list data. Inside the li
     'lon': lons,
     'lat': lats,
     'marker': {
-        'size': [5*mag for mag in mags],
+        'size': [3*mag for mag in mags],
+        'color': mags,
+        'colorscale': 'Hot',  # There are more colorscale like --> Bluered_r, Viridis, Inferno, Hot, etc...
+        'reversescale': True,
+        'colorbar': {'title': 'Magnitude'},
         },
 }]
 my_layout = Layout(title='Global Earthquakes')  # I instance from a Layout class that it is conteined in plotly.graph_objs
