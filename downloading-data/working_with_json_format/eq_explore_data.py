@@ -12,20 +12,23 @@ with open(filename) as f:
 all_eq_dicts = all_eq_data['features']  # I took the data associated with the key 'features' and store
 
 # extracting magnitudes, longitudes, latitudes from the json data
-mags, lons, lats = [], [], []
+mags, lons, lats, hover_texts = [], [], [], []
 for eq_dict in all_eq_dicts:
     mag = eq_dict['properties']['mag']  # I stored the magnitudes data that it is conteined in 'properties' dictionary
     lon = eq_dict['geometry']['coordinates'][0] # I stored the longiteds data that it is conteined in 'geometry'--> 'coordinates'
     lat = eq_dict['geometry']['coordinates'][1] # I stored the latitudes data that it is conteined in 'geometry' --> 'coordinates'
+    title = eq_dict['properties']['title']
     mags.append(mag)  # Append the mag data
     lons.append(lon) # Append the longitudes data
     lats.append(lat) # Append the latitudes data
+    hover_texts.append(title)
 
 # Map the eathquakes.
 data = [{  # I created the Scattergeo object inside the list data. Inside the list the data is structured as key-value pairs.
     'type': 'scattergeo',
     'lon': lons,
     'lat': lats,
+    'text': hover_texts,
     'marker': {
         'size': [3*mag for mag in mags],
         'color': mags,
