@@ -26,6 +26,9 @@ data = [{  # I created the Scattergeo object inside the list data. Inside the li
     'type': 'scattergeo',
     'lon': lons,
     'lat': lats,
+    'marker': {
+        'size': [5*mag for mag in mags],
+        },
 }]
 my_layout = Layout(title='Global Earthquakes')  # I instance from a Layout class that it is conteined in plotly.graph_objs
 
