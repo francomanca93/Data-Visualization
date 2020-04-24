@@ -4,7 +4,7 @@ Data visualization: Exploring data through visual representations. First step to
 ### data-visualization folder
 In this folder I learned to generate data sets and create visualization of that data.
 
-There are three folder more that I will explain it.
+There are three folders more that I will explain it.
 
 1. The folder **plot_a_line_graph**:
     - I created simple plots with Matplotlib.
@@ -23,5 +23,15 @@ There are three folder more that I will explain it.
         - *die_visual.py* is a script to create a visually histogram.
 
 ### downloading-data folder
+In this folder I learned to work with different data sets extensions, csv and json
+There are two folders with python scripts to work with csv and json files.
 
+1. The folder **working_with_csv_files**:
+    I worked with data sets of different cities temperatures of the world and I plotted it. 
+    It contain some python scripts and one folder with data sets.
+
+2. The folder **working_with_json_files**:
+    I worked with data sets of earthquakes of the word and their Ritcher degree.
+    It contain some python scripts and one folder with data sets.
+    
 ### working-with-APIs folder
