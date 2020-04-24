@@ -6,6 +6,7 @@ from plotly import offline  # offline module allow you to render a map
 # Explore the structure of the data.
 filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/eq_data_30_day_m1.json'
 # filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/eq_data_1_day_m1.json'
+# filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_json_format/data/eq_7pm_hour_23-04-2020.json'
 
 with open(filename) as f:
     all_eq_data = json.load(f)  # store entire set of data
