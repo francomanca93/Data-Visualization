@@ -87,7 +87,7 @@ def plotDataSetTemperature(filename, directory):
 # ----------------------------------------------
 
 # Directory where the files are stored.
-directory = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/data/data_argentina'
+directory = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_csv_files/data/data_argentina'
 
 # List and select file that I want it. 
 print(f'Se listaran todos los archivos del directorio {directory}')

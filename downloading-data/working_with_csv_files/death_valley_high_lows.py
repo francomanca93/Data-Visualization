@@ -3,7 +3,7 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 
-filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/data/death_valley_2018_simple.csv'
+filename = '/home/franco/Documents/Python/Proyectos/Data-Visualization/downloading-data/working_with_csv_files/data/death_valley_2018_simple.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
