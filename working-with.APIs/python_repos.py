@@ -26,3 +26,7 @@ for repo_dict in repo_dicts:
     print(f"Updated: {repo_dict['updated_at']}")
     print(f"Description: {repo_dict['description']}")
 
+# Monitoring API rate limits
+# Most API are rate limited, which means there's a limit to how many requests you can make in a certain
+# amount of time. To see if you're approaching GitHub's limits, enter https://api.github.com/rate_limit. 
+# The information we’re interested in is the rate limit for the search API.
