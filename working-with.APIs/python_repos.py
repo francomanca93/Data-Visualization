@@ -11,4 +11,17 @@ response_dict = r.json()  # The API returns the information in JSON format, so w
 
 # Process results.
 print(response_dict.keys())
+# Reposotories results
+print(f"Total repositories (from total_count): {response_dict['total_count']}")  # the total number of Python repositories on GitHub.
+
+# Explore information about the repositories.
+repo_dicts = response_dict['items']  # The value associated with 'items' is a list of dictionaries
+print(f"Repositories returned (from items): {len(repo_dicts)}")  # See how many repositories are 
+
+# Examine the first repository.
+repo_dict = repo_dicts[0]
+print(f"\nKeys: {len(repo_dict)}")  # Print the number of keys to see how much information we have.
+for key in sorted(repo_dict.keys()):  # Print all the dictionary's keys to see what kind of information is included.
+    print(key)
+
 
