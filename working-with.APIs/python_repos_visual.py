@@ -12,21 +12,25 @@ print(f"Status code: {r.status_code}")  # A status code of 200 indicates a succe
 # Process results.
 response_dict = r.json()  # The API returns the information in JSON format, so we use the json() method to convert the information to a Python dictionary
 repo_dicts = response_dict['items']  # The value associated with 'items' is a list of dictionaries
-repo_names, stars, labels = [], [], []  # Lists to show the repositories names, stars and labels
+repo_links, stars, labels = [], [], []  # Lists to show the repositories names, stars and labels
 for repo_dict in repo_dicts:
-    repo_names.append(repo_dict['name'])
-    stars.append(repo_dict['stargazers_count']) 
+    repo_name = repo_dict['name']
+    repo_url = repo_dict['html_url']
+    repo_link = f"<a href='{repo_url}'>{repo_name}</a>"
+    repo_links.append(repo_link)  # Append repository link and name
+    
+    stars.append(repo_dict['stargazers_count']) # Append star of the repositories
 
     owner = repo_dict['owner']['login']
     description = repo_dict['description']
     label = f"{owner}<br />{description}"  # Plotly allows you to use HTML code within text elements. Label is a string with a line break (<br />)
-    labels.append(label)
+    labels.append(label)  # Append label (owner and description) to labels
 
 
 # Make visualization. Changes to the 'data' object affect the bars visualization.
 data = [{
     'type': 'bar',
-    'x': repo_names,
+    'x': repo_links,
     'y': stars,
     'hovertext': labels,
     'marker':{  # The marker settings affect the design of the bars
